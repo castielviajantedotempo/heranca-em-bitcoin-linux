@@ -55,6 +55,8 @@ def main():
                 #Send e-mail with message: the password to open testment file is ########
                 email_sender.main(to_email, subject, content)
                 write_file('sended_emails.txt', 'a+', count)
+                if str(d["send_messages_on_nostr"]) == "yes":
+                    subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["first_note"]["content"])+str(diff)+str(d["nostr_notes"]["first_note"]["content_cmp"])])
             else:
                 if lines[0] != count:
                     #Send e-mail with message: the password to open testment file is ########
@@ -65,6 +67,8 @@ def main():
         else:
             email_sender.main(to_email, subject, content)
             write_file('sended_emails.txt', 'a+', count)
+            if str(d["send_messages_on_nostr"]) == "yes":
+                subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["first_note"]["content"])+str(diff)+str(d["nostr_notes"]["first_note"]["content_cmp"])])
 
     # second e-mail with instructions
     if diff >= 90 and diff < 180:
@@ -78,16 +82,20 @@ def main():
                 #Send e-mail with message: the password to open seed file is ########
                 email_sender.main(to_email, subject, content)
                 write_file('sended_emails.txt', 'a+', count)
+                if str(d["send_messages_on_nostr"]) == "yes":
+                    subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["second_note"]["content"])+str(diff)+str(d["nostr_notes"]["second_note"]["content_cmp"])])
             else:
                 if lines[1] != count:
                     #Send e-mail with message: the password to open seed file is ########
                     email_sender.main(to_email, subject, content)
                     write_file('sended_emails.txt', 'a+', count)
                     if str(d["send_messages_on_nostr"]) == "yes":
-                        subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["first_note"]["content"])+str(diff)+str(d["nostr_notes"]["second_note"]["content_cmp"])])
+                        subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["second_note"]["content"])+str(diff)+str(d["nostr_notes"]["second_note"]["content_cmp"])])
         else:
             email_sender.main(to_email, subject, content)
             write_file('sended_emails.txt', 'a+', count)
+            if str(d["send_messages_on_nostr"]) == "yes":
+                subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["second_note"]["content"])+str(diff)+str(d["nostr_notes"]["second_note"]["content_cmp"])])
     # last e-mail with instructions
     if diff >= 180 and diff < 360:
         to_email=str(d["emails"]["your"])+","+str(d["emails"]["person_will_receive_access"])
@@ -100,6 +108,8 @@ def main():
                 #Send e-mail with message: the password to open passphrase file is ########
                 email_sender.main(to_email, subject, content)
                 write_file('sended_emails.txt', 'a+', count)
+                if str(d["send_messages_on_nostr"]) == "yes":
+                    subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["final_note"]["content"])+str(diff)+str(d["nostr_notes"]["final_note"]["content_cmp"])])
             else:
                 if lines[2] != count:
                     #Send e-mail with message: the password to open passphrase file is ########
@@ -110,5 +120,7 @@ def main():
         else:
             email_sender.main(to_email, subject, content)
             write_file('sended_emails.txt', 'a+', count)
+            if str(d["send_messages_on_nostr"]) == "yes":
+                subprocess.run(["./post-to-nostr.sh",str(d["nostr_notes"]["final_note"]["content"])+str(diff)+str(d["nostr_notes"]["final_note"]["content_cmp"])])
 if __name__ == "__main__":
     main()
