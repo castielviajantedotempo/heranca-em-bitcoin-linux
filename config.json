@@ -1,0 +1,49 @@
+{
+  "google_app_auth":"hbfd ordh pytr awqs",
+  "emails": {
+	"your": "some_email@gmail.com",
+	"person_will_receive_access": "another_email@gmail.com"
+  },
+  "email_messages":{
+    "missing_first_beat": "Please hit hit_me.sh before running the program!!! Por favor execute hit_me.sh antes de rodar o programa!!!",
+    "ordinary": {
+		  "subject":"Você não atualiza sua prova de vida há pelo menos ",
+		  "content": "Você não atualizou sua prova de vida por ",
+		  "content_cmp": " dias. Atualize ou aguarde instruções no próximo e-mail"
+	},
+	"first_email": {
+		  "subject":"Instruções para abrir o arquivo de testamento",
+		  "content": "A senha para abrir o arquivo de testamento é iuiahgpo325",
+		  "content_cmp": ""
+	},
+	"second_email": {
+		  "subject":"Instruções para abrir o arquivo das seeds",
+		  "content": "A senha para abrir o arquivo das seeds é hfiushduisudf",
+		  "content_cmp": ""
+	},
+	"final_email": {
+		  "subject":"Instruções para abrir o arquivo da passphrase",
+		  "content": "A senha para abrir o arquivo da passphrase é jhijiajijdij",
+		  "content_cmp": ""
+	}
+  },
+  "nostr_notes":{
+    "ordinary": {
+		  "content": "[Bot] Castiel não atualizou sua prova de vida por ",
+		  "content_cmp": " dias. Provavelmente não é nada ou ele só está tirando uns dias de folga."
+	},
+	"first_note": {
+		  "content": "[Bot] Castiel não atualizou sua prova de vida por ",
+		  "content_cmp": " dias. Pode ser que ele esteja preso ou internado."
+	},
+	"second_note": {
+		  "content": "[Bot] Castiel não atualizou sua prova de vida por ",
+		  "content_cmp": " dias. A esperança é a última que morre. Temos ainda um ultimo e-mail para enviar."
+	},
+	"final_note": {
+		  "content": "[Bot] Castiel não atualizou sua prova de vida por ",
+		  "content_cmp": " dias. Se você está lendo essa mensagem quer dizer que ele foi para a Glória. Ajude a viúva com sats para o seguinte endereço lightning: aline_acm@coinos.io."
+	}
+  },
+  "send_messages_on_nostr": "yes"
+}
